@@ -1,4 +1,4 @@
-module github.com/snowcrumble/grpc-opentracing
+module github.com/snowcrumble/grpc-opentracing/go/otgrpc
 
 go 1.13
 
