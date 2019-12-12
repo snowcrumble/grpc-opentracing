@@ -53,6 +53,7 @@ func OpenTracingClientInterceptor(tracer opentracing.Tracer, optFuncs ...Option)
 			gRPCComponentTag,
 		)
 		defer clientSpan.Finish()
+		ctx = opentracing.ContextWithSpan(ctx, clientSpan)
 		ctx = injectSpanContext(ctx, tracer, clientSpan)
 		if otgrpcOpts.logPayloads {
 			clientSpan.LogFields(log.Object("gRPC request", req))
